@@ -33,6 +33,9 @@
                                 <rect key="frame" x="16" y="28" width="343" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Draw a card"/>
+                                <connections>
+                                    <action selector="drawButtonTapped:" destination="Y4u-eg-okh" eventType="touchUpInside" id="R4c-jW-Z35"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,6 +45,9 @@
                             <constraint firstItem="Xai-8m-f8J" firstAttribute="trailing" secondItem="erp-SX-mIC" secondAttribute="trailingMargin" id="wCJ-1n-veK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="Xai-8m-f8J" id="2Kb-wP-9bn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqT-P5-Bvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

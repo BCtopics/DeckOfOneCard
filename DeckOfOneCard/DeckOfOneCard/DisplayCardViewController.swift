@@ -10,26 +10,28 @@ import UIKit
 
 class DisplayCardViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var cardImageView: UIImageView!
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - IBActions
+    
+    @IBAction func drawButtonTapped(_ sender: Any) {
+        
+        CardController.draw(numberOfCards: 1) { (cards) in
+            
+            guard let card = cards.first else { return }
+            
+            ImageController.image(forURL: card.imageEndPoint, completion: { (image) in
+                guard let image = image else { return }
+                
+                self.cardImageView.image = image
+                
+            })
+            
+        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
